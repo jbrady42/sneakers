@@ -1,10 +1,11 @@
 require "sneakers"
 require 'open-uri'
 require 'logger'
+require 'resolv'
 
 def compose_or_localhost(key)
   Resolv::DNS.new.getaddress(key)
-rescue 
+rescue
   "localhost"
 end
 
@@ -31,6 +32,3 @@ class TitleScraper
     $1
   end
 end
-
-
-
