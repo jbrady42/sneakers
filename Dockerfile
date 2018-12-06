@@ -19,8 +19,6 @@ COPY sneakers.gemspec /sneakers/sneakers.gemspec
 
 COPY Gemfile /sneakers/Gemfile
 
-COPY Gemfile.lock /sneakers/Gemfile.lock
-
 RUN bundle --jobs=4 --retry=3
 
 COPY . /sneakers
