@@ -6,6 +6,10 @@ services:
     depends_on:
       - rabbitmq
       - redis
+    volumes:
+     - .:/sneakers
+    environment:
+      - RABBITMQ_URL=amqp://guest:guest@rabbitmq:5672
 
   rabbitmq:
     image: rabbitmq:management-alpine
@@ -17,4 +21,3 @@ services:
     image: redis:alpine
     ports:
       - "6379:6379"
-
